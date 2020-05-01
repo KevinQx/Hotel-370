@@ -2,6 +2,35 @@ import sqlite3
 
 db = 'hotel.db'
 
+
+def create_names():
+    conn = sqlite3.connect("new.db")
+    cursor = conn.cursor()
+
+    cursor.execute(
+    """create table names (
+        name_id integer primary key,
+        name text not null
+    )""")
+
+    conn.commit()
+    conn.close()
+    
+
+def add_name_row():
+    conn = sqlite3.connect("new.db")
+    cursor = conn.cursor()
+
+    cursor.execute(
+    """insert into names values (
+        
+    )""")
+
+    conn.commit()
+    conn.close()
+
+
+
 def create_db_and_tables():
     conn = sqlite3.connect(db)
     c = conn.cursor()
@@ -120,6 +149,8 @@ def insert_new_rooms(rooms):
 
 
 if __name__ == '__main__':
-    create_db_and_tables()
-    
-
+    create_names()
+    data = [
+        (1, "Joseph"),
+        (2, "John")
+    ]

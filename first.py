@@ -1,6 +1,8 @@
 from flask import Flask, redirect, url_for,render_template, session, request, g
 from actions import *
 from queries import insert_new_admin
+import json
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -26,9 +28,20 @@ def admin_page():
 @app.route("/adminregistersubmit", methods=["POST"])
 def admin_registration():
     pass
-    
 
 
+@app.route("/home")
+def sendHome():
+    return render_template("bla.html")
+
+
+@app.route("/getData")
+def send_data():
+    data = [
+        (1, "Joseph"),
+        (2, "John")
+    ]
+    return json.dumps(data)
 
 if __name__ == "__main__":
     app.run(debug=True)
