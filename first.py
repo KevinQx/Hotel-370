@@ -25,7 +25,7 @@ def admin_page():
 
 @app.route("/adminregistersubmit", methods=["POST"])
 def admin_registration():
-    
+    pass
     
 
 
