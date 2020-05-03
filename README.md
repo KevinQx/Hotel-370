@@ -1,3 +1,30 @@
+# How to get set up:
+1. download the following if you don't already have it:
+  - ```python3```, this will install ```pip``` (python package manager) as well
+  - git
+2. once git is installed you can, from the command line (```cmd``` on windows, ```terminal``` on mac), cd into your preferred location and run ```git clone https://github.com/Hotels-Website/Hotel-370.git``` to download this repository into that folder.
+3. to run the app, cd into the just cloned repository and run ```python app.py```
+4. if you run into an error such as ```ModuleNotFoundError: No module named 'flask'``` or something similar, run "pip install flask" of whichever module was mentioned to install the required library
+5. When the app is successfully running, a local server is started.  You should see this...
+
+```
+(hotelRes) C:\Users\Joseph\Desktop\HotelRes>python app.py
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 841-872-074
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+```
+
+--------------------------------------------------
+the important files to look at are app.py, queries.py and templates/ 
+
+
+
 # HotelRes
 Hotel Reservation App - CS370 Project 2b
 
