@@ -39,6 +39,7 @@ def register():
 @app.route("/")
 def home():
     data = select_all_hotels()
+    session["date"] = "something"
     return render_template('home.html', hotels=data)
 
 
