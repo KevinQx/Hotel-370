@@ -4,10 +4,9 @@
   - git
 2. once git is installed you can, from the command line (```cmd``` on windows, ```terminal``` on mac), cd into your preferred location and run ```git clone https://github.com/Hotels-Website/Hotel-370.git``` to download this repository into that folder.
 3. run ```pip install -r requirements.txt``` to install the dependencies
-4. to run the app, cd into the just cloned repository
-5. 4. to run the app, cd into the just cloned repository and type ```python app.py```
-6. if you run into an error such as ```ModuleNotFoundError: No module named 'flask'``` or something similar, run "pip install flask" of whichever module was mentioned to install the required library
-7. When the app is successfully running, a local server is started.  You should see this...
+4. to run the app, cd into the just cloned repository and type ```python app.py```
+5. if you run into an error such as ```ModuleNotFoundError: No module named 'flask'``` or something similar, run "pip install flask" or whichever module was mentioned, to install the required library
+6. When the app is successfully running, a local server is started.  You should see this...
 
 ```
 (hotelRes) C:\Users\Joseph\Desktop\HotelRes>python app.py
@@ -22,10 +21,44 @@
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
 
+7. type http://127.0.0.1:5000/ into your address bar to see the website on your local computer
+8. flask has live reloading, so as you save changes the server reloads automatically.
+9. bootstrap and jquery are already imported - you don't need to use either but you can.
+
 --------------------------------------------------
-the important files to look at are app.py, queries.py and templates/ 
+the important files to look at are app.py, queries.py and templates/
 
+# Technologies
+1. git - version control - how we can all work together and not step on each others toes
+2. flask - web framework (handles server routes and sessions, etc.) - https://flask.palletsprojects.com/en/1.1.x/quickstart/
+3. sqlite3 - simple db that stores in a single file
+4. bootstrap (css framework) - https://getbootstrap.com/docs/4.4/getting-started/introduction/ - makes css way easier to use imho.
+5. html, css, javascript
+6. jinja - if you see code that looks like ```{% something %}``` in the html files, this is jinja.  it's used by flask to pass data to the html files before they get rendered. 
+7. XMLHttpRequest - A way of sending asyncronous http requests from javascript
+8. python Decorators - you will see ```@something``` above some functions in the python code - https://book.pythontips.com/en/latest/decorators.html - these essentially wrap the following function with some other code. They "decorate" the function, so to speak.  
 
+```
+def my-decorator(func):
+  def decorated_function():
+    print("some code before")
+    func()
+    print("some code after")
+  return decorated_function
+  
+  
+@my-decorator
+def hello_world():
+  print("hello world")
+  
+>>> hello_world()
+Some code before
+hello world
+some code after
+
+```
+
+------------------------------------------------------------------------
 
 # HotelRes
 Hotel Reservation App - CS370 Project 2b
