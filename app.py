@@ -43,6 +43,7 @@ def home():
     return render_template('home.html', hotels=data)
 
 
+
 @app.route("/reservations/<username>")
 def reservations(username):
     return render_template("reservations.html")
