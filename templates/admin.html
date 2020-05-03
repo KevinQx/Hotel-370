@@ -1,37 +1,17 @@
 {% extends "layout.html" %}
 {% block content%}
-<h1>Login</h1>  
-<form action="/adminloginsumbit" method="post">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
+<h1>Admin</h1>
+<h2>Franchises</h2>
+<h2>Reservations</h2>
+<ul>
+  <li>todays reservations</li>
+  <li>future reservations</li>
+</ul>
+<h2>Add new Franchise</h2>
+<ol>
+  <li>The administrator must specify the location of the new hotel franchise.</li>
+  <li>The administrator must specify number and types of rooms/suites and rates of the new
+    hotel franchise.</li>
+</ol>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-<hr>
-<form action="/adminregistersubmit" method="post">
-  <h1>Register</h1>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
 {% endblock content%}
