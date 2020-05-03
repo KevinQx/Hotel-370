@@ -3,9 +3,11 @@
   - ```python3```, this will install ```pip``` (python package manager) as well
   - git
 2. once git is installed you can, from the command line (```cmd``` on windows, ```terminal``` on mac), cd into your preferred location and run ```git clone https://github.com/Hotels-Website/Hotel-370.git``` to download this repository into that folder.
-3. to run the app, cd into the just cloned repository and run ```python app.py```
-4. if you run into an error such as ```ModuleNotFoundError: No module named 'flask'``` or something similar, run "pip install flask" of whichever module was mentioned to install the required library
-5. When the app is successfully running, a local server is started.  You should see this...
+3. run ```pip install -r requirements.txt``` to install the dependencies
+4. to run the app, cd into the just cloned repository
+5. 4. to run the app, cd into the just cloned repository and type ```python app.py```
+6. if you run into an error such as ```ModuleNotFoundError: No module named 'flask'``` or something similar, run "pip install flask" of whichever module was mentioned to install the required library
+7. When the app is successfully running, a local server is started.  You should see this...
 
 ```
 (hotelRes) C:\Users\Joseph\Desktop\HotelRes>python app.py
