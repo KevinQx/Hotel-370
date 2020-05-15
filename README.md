@@ -202,14 +202,14 @@ git checkout -b [newbranchname] // create and enter new branch
 
 
 
-step1 - download git and install
-step2 - go to github and click on "clone or download"
-step3 - copy link
-step4 - go to folder (cd) you want to host the repo within 
-step5 - "git clone http://(the link)
-step6 - create a new branch for yourself - "git checkout -b sean"
-step7 - make your changes 
-= "git add filename" or "git add ." then git commit -m "your message" 
-step8 - git push
-step9 - if your branch doesn't exist on github, you will be prompted to type
-        git push --set-upstream origin "nameofyourbranch"
+- step1 - download git and install
+- step2 - go to github and click on "clone or download"
+- step3 - copy link
+- step4 - go to folder (cd) you want to host the repo within 
+- step5 - "git clone http://(the link)
+- step6 - create a new branch for yourself - "git checkout -b sean"
+- step7 - make your changes 
+- = "git add filename" or "git add ." then git commit -m "your message" 
+- step8 - git push
+- step9 - if your branch doesn't exist on github, you will be prompted to type
+-         git push --set-upstream origin "nameofyourbranch"
