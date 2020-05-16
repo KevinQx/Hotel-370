@@ -131,6 +131,16 @@ def select_all_locations():
         print(data)
     return data
 
+def location_in_db(i, j):
+    with create_connection(db) as c:
+        c.execute(
+            f"""select i, j
+            from location
+            where location.i = '{i}'
+            and location.j = '{j}'
+            """)
+        data = c.fetchone()
+    return data
 
 def select_all_hotels():
     with create_connection(db) as c:
@@ -159,6 +169,23 @@ def user_in_db(un, pw):
 def select_rooms_search_criteria():
     pass
 
+def reservations_by_hotel_owner(hotel):
+    with create_connection(db) as c:
+        c.execute(f"""
+            select c.first-name, c.last-name, r.start-date, r.end-date, a.room-number
+            from reservation as r
+            join customer as c 
+            on c.id = r.cust-id
+            join room as a 
+            on r.room-id = a.id
+            join location as l
+            on a.location-id = l.id
+            join admin as b
+            on b.hotel-id = a.hotel-id
+            where b.hotel-id = '{hotel}'
+            """)
+        data = c.fetchone()
+    return data
 
 def initialize_dummy_data():
     hotelid = 0
