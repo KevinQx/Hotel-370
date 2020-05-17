@@ -111,28 +111,8 @@ def admin():
             session["date_display"] = date.today().strftime("%D")
             return render_template("admin.html")
         return redirect(url_for("home"))
+    return render_template("admin.html")
 
-
-<<<<<<< HEAD
-@app.route("/admin", methods=["GET", "POST"])
-def admin():
-    # get hotel admin info
-
-
-    #if request.method == "POST":
-     #   name - request.form["hn"]
-     #   i = request.form["loci"]
-     #   j = request.form["locj"]
-     #   i = request.form["loci"]
-     #   j = request.form["locj"]
-     #   i = request.form["loci"]
-      #  j = request.form["locj"]
-      #  if(location_in_db(i,j) == false):
-      #      insert_new_location(hotel,name,i,j)
-    
-    #session["admin"] = un       
-    #data = reservations_by_hotel_owner(hotel)
-=======
 @app.route("/register_admin", methods=["GET","POST"])
 def register_admin():
     if request.method == "POST":
@@ -144,7 +124,6 @@ def register_admin():
             insert_new_hotel(hn)
             idn = hotel_id_from_name(hn)
             insert_new_admin(un,pw,idn)
->>>>>>> 86d21d58412dccb52d023c99b8669ac2988d48a8
     return render_template("admin.html")
 
 # Returning Data
