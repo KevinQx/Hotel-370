@@ -19,7 +19,6 @@ def login():
     if request.method == "POST":
         un = request.form["un"]
         pw = request.form["pw"]
-        print(session)
         if user_in_db(un, pw):
             session["user"] = un
             return redirect(url_for("home"))
@@ -50,7 +49,6 @@ def home():
     data = select_all_hotels()
     session["date"] = "something"
     return render_template('home.html', hotels=data)
-
 
 
 @app.route("/reservations/<username>")
