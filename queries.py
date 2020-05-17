@@ -252,7 +252,7 @@ def hotel_id_from_name(name):
 def select_rooms_search_criteria():
     pass
 
-def current_reservations_by_hotel_owner(hotel, date):
+def current_reservations_by_admin(hotel, date):
     with create_connection(db) as c:
         c.execute(f"""
             select c.first-name, c.last-name, r.start-date, r.end-date, a.room-number
@@ -267,10 +267,10 @@ def current_reservations_by_hotel_owner(hotel, date):
             on b.hotel-id = a.hotel-id
             where b.hotel-id = '{hotel}' and r.end-date >= '{date}'
             """)
-        data = c.fetchone()
+        data = c.fetchall()
     return data
 
-def future_reservations_by_hotel_owner(hotel, date):
+def future_reservations_by_admin(hotel, date):
     with create_connection(db) as c:
         c.execute(f"""
             select c.first-name, c.last-name, r.start-date, r.end-date, a.room-number
@@ -285,7 +285,7 @@ def future_reservations_by_hotel_owner(hotel, date):
             on b.hotel-id = a.hotel-id
             where b.hotel-id = '{hotel}' and r.start-date < '{date}'
             """)
-        data = c.fetchone()
+        data = c.fetchall()
     return data
 
 def initialize_dummy_data():

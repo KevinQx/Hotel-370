@@ -133,11 +133,11 @@ def getAllLocations():
 
 @app.route("/getAdminCurrentReservations")
 def getAdminCurrentReservations(hotel, date):
-    return json.dumps(current_reservations_by_hotel_owner(hotel, date))
+    return json.dumps(current_reservations_by_admin(hotel, date))
 
 @app.route("/getAdminFutureReservations")
 def getAdminFutureReservations(hotel, date):
-    return json.dumps(future_reservations_by_hotel_owner(hotel, date))
+    return json.dumps(future_reservations_by_admin(hotel, date))
     
 # @app.route("/login")
 # def login_and_register():

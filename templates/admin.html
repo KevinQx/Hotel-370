@@ -23,45 +23,26 @@
 
 
 <h1>Admin</h1>
-<h2>Franchises</h2>
+<!--<h2>Franchises</h2> not required, can add if everything else is complete-->
 <h2>Reservations</h2>
 <ul>
-  <li>Todays reservations</li>
-  <p id="current">No Reservations Today</p>
-  <li>Future reservations</li>
-  <p id="future">No Future Reservations</p>
-
 <div class="card">
 <div class="card-body">
   <h3>Today's Reservations: {{session["date_display"]}}</h3>
-  This is some text within a card body.
-  <table class="table">
+  <table id="table1" class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">First</th>
         <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Check-in Day</th>
+        <th scope="col">Check-out Day</th>
+        <th scope="col">Room Number</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
+        
       </tr>
     </tbody>
   </table>
@@ -70,34 +51,20 @@
   <br>
 
   <h3>Future Reservations</h3>
-  This is some text within a card body.
-  <table class="table">
+  <table id="table2" class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">First</th>
         <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Check-in Day</th>
+        <th scope="col">Check-out Day</th>
+        <th scope="col">Room Number</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
+        
       </tr>
     </tbody>
   </table>
@@ -107,37 +74,8 @@
 
 <div class="card">
 <div class="card-body">
-  <h3>Rooms</h3>
-  This is some text within a card body.
+  <h3>Add Location</h3>
   <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-      <tr>
         <td colspan="4">   
           <form class="form-inline">
             <!-- <div class="form-group mb-2">
@@ -145,18 +83,34 @@
               <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Price">
             </div> -->
             <div class="form-group mx-sm-3 mb-2">
-              <label for="location" class="sr-only">location</label>
-              <input type="text" class="form-control" id="location" placeholder="Location">
+              <label for="name" class="sr-only">New Hotel Name</label>
+              <input type="text" class="form-control" id="name" placeholder="New Hotel Name">
             </div>
             <div class="form-group mx-sm-3 mb-2">
-              <label for="size" class="sr-only">size</label>
-              <input type="text" class="form-control" id="size" placeholder="Size in sqft">
+              <label for="iloc" class="sr-only">I Coordinate</label>
+              <input type="text" class="form-control" id="iloc" placeholder="I Coordinate">
             </div>
             <div class="form-group mx-sm-3 mb-2">
-              <label for="price" class="sr-only">price</label>
-              <input type="text" class="form-control" id="price" placeholder="Price">
+              <label for="jloc" class="sr-only">J Coordinate</label>
+              <input type="text" class="form-control" id="jloc" placeholder="J Coordinate">
             </div>
-            <button type="submit" class="btn btn-primary mb-2">Add Room</button>
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="cs" class="sr-only">Number of Cheap Suites</label>
+              <input type="text" class="form-control" id="cs" placeholder="Number of Cheap Suites">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="cr" class="sr-only">Cheap Rate</label>
+              <input type="text" class="form-control" id="cr" placeholder="Cheap Rate">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="es" class="sr-only">Number of Expensive Suites</label>
+              <input type="text" class="form-control" id="es" placeholder="Number of Expensive Suites">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="er" class="sr-only">Expensive Rate</label>
+              <input type="text" class="form-control" id="er" placeholder="Expensive Rate">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2" id="addLoc">Add Location</button>
           </form>
         </td>
       </tr>
@@ -165,41 +119,101 @@
 </div>
 </div>
 </ul>
-<h2>Add new Franchise</h2>
-<ol>
-  <form method="post" action="/admin">
-  	<div class="form-group">
-      <label for="hn">New Hotel Name</label>
-      <input type="text" name="hn" class="form-control" id="hn">
-    </div>
-    <div class="form-group">
-      <label for="loci">i Value for New Location</label>
-      <input type="number" name="loci" class="form-control" id="loci">
-    </div>
-    <div class="form-group">
-      <label for="locj">j Value for New Location</label>
-      <input type="number" name="locj" class="form-control" id="locj">
-    </div>
-    <div class="form-group">
-      <label for="cs">Number of Cheap Suites</label>
-      <input type="number" name="cs" class="form-control" id="cs">
-    </div>
-    <div class="form-group">
-      <label for="pc">Price of Cheap Suites</label>
-      <input type="number" name="pc" class="form-control" id="pc">
-    </div>
-    <div class="form-group">
-      <label for="es">Number of Expensive Suites</label>
-      <input type="number" name="es" class="form-control" id="es">
-    </div>
-    <div class="form-group">
-      <label for="pe">Price of Expensive Suites</label>
-      <input type="number" name="pe" class="form-control" id="pe">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</ol>
+
 <script>
-   
+	var tableRef1 = document.getElementById('table1').getElementsByTagName('tbody')[0];
+	var tableRef2 = document.getElementById('table2').getElementsByTagName('tbody')[0];
+
+	// testing auto filling reservation tables
+	// i < row count from our select statement for current reservations
+	for(var i = 0; i < 4; i++)
+	{
+		// Insert a row in the table at the last row
+		var newRow   = tableRef1.insertRow();
+		
+		// Insert a cell in the row at index 0
+		var rowNum  = newRow.insertCell(0);
+		var firstName  = newRow.insertCell(1);
+		var lastName  = newRow.insertCell(2);
+		var startDate  = newRow.insertCell(3);
+		var endDate  = newRow.insertCell(4);
+		var roomNum  = newRow.insertCell(5);
+
+		// Append a text node to the cell
+		var rowNumText  = document.createTextNode(i);
+		rowNum.appendChild(rowNumText);
+
+		// all these would be filled with values retrieved from out select statement
+		var firstNameText  = document.createTextNode('John');
+		firstName.appendChild(firstNameText);
+		var lastNameText  = document.createTextNode('Smith');
+		lastName.appendChild(lastNameText);
+		var startDateText  = document.createTextNode('5/5/20');
+		startDate.appendChild(startDateText);
+		var endDateText  = document.createTextNode('5/21/20');
+		endDate.appendChild(endDateText);
+		var roomNumText  = document.createTextNode('100');
+		roomNum.appendChild(roomNumText );
+	}
+	
+	// i < row count from our select statement for future reservations
+	for(var i = 0; i < 4; i++)
+	{
+		// Insert a row in the table at the last row
+		var newRow   = tableRef2.insertRow();
+		
+		// Insert a cell in the row at index 0
+		var rowNum  = newRow.insertCell(0);
+		var firstName  = newRow.insertCell(1);
+		var lastName  = newRow.insertCell(2);
+		var startDate  = newRow.insertCell(3);
+		var endDate  = newRow.insertCell(4);
+		var roomNum  = newRow.insertCell(5);
+
+		// Append a text node to the cell
+		var rowNumText  = document.createTextNode(i);
+		rowNum.appendChild(rowNumText);
+
+		// all these would be filled with values retrieved from out select statement
+		var firstNameText  = document.createTextNode('John');
+		firstName.appendChild(firstNameText);
+		var lastNameText  = document.createTextNode('Smith');
+		lastName.appendChild(lastNameText);
+		var startDateText  = document.createTextNode('5/5/20');
+		startDate.appendChild(startDateText);
+		var endDateText  = document.createTextNode('5/21/20');
+		endDate.appendChild(endDateText);
+		var roomNumText  = document.createTextNode('100');
+		roomNum.appendChild(roomNumText );
+	}
+   	addLoc.onclick = function()
+    {
+   	 	// checks all fields are filled
+   	  	if(document.getElementById("iloc").value.length == 0||document.getElementById("jloc").value.length == 0||document.getElementById("name").value.length == 0
+   	  		||document.getElementById("cs").value.length == 0||document.getElementById("cr").value.length == 0||document.getElementById("es").value.length == 0
+   	  		||document.getElementById("er").value.length == 0)
+   	  		alert("All fields are required. Try again")
+
+   	  	// not sure if I can directly call location_in_db
+   	  	if(location_in_db(document.getElementById("iloc"),document.getElementById("jloc")))
+   	  		alert("Location already in use. Please add your hotel at a different location");
+   	  	else
+   	  	{
+   	  		//insert_new_location({{session["hotelid"]}}, document.getElementById("name"), document.getElementById("iloc"), document.getElementById("jloc"));
+   	  		// room table inconsistent with project specs unsure how to go about it
+   	  		// insert_new_rooms();
+   	  	}
+   	};
+
+   	// to see how data is formatted
+   	const Http = new XMLHttpRequest();
+    const url='/getAllLocations';
+    Http.open("GET", url);
+    Http.send();
+
+    Http.onreadystatechange = (e) => {
+        var text = Http.responseText;
+      console.log(text);
+    }
 </script>
 {% endblock content%}
