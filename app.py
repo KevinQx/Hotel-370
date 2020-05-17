@@ -8,9 +8,12 @@ app.secret_key = "hello"
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    if "user" in session:
+        return "user is currently logged in"
     if request.method == "POST":
         un = request.form["un"]
-        pw = request.form["pw"]       
+        pw = request.form["pw"]
+        print(session)
         if user_in_db(un, pw):
             session["user"] = un
             return redirect(url_for("home"))
@@ -107,7 +110,6 @@ def getAllLocations():
 @app.route('/js/<path>')
 def send_js(path):
     return send_from_directory('js', path)
-
 
 
 if __name__ == "__main__":
