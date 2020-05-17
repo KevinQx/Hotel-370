@@ -65,8 +65,24 @@ def hotel_page(chain, hotelname):
     return redirect(url_for("home"))
 
 
-@app.route("/admin")
+@app.route("/admin", methods=["GET", "POST"])
 def admin():
+    # get hotel admin info
+
+
+    #if request.method == "POST":
+     #   name - request.form["hn"]
+     #   i = request.form["loci"]
+     #   j = request.form["locj"]
+     #   i = request.form["loci"]
+     #   j = request.form["locj"]
+     #   i = request.form["loci"]
+      #  j = request.form["locj"]
+      #  if(location_in_db(i,j) == false):
+      #      insert_new_location(hotel,name,i,j)
+    
+    #session["admin"] = un       
+    #data = reservations_by_hotel_owner(hotel)
     return render_template("admin.html")
 
 
@@ -76,7 +92,10 @@ def admin():
 def getAllLocations():
     return json.dumps(select_all_locations())
 
-
+@app.route("/getAdminReservations")
+def getAdminReservations(hotel):
+    return json.dumps(reservations_by_hotel_owner(hotel))
+    
 # @app.route("/login")
 # def login_and_register():
 #     return render_template("login.html")

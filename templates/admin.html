@@ -9,7 +9,7 @@
 </ul>
 <h2>Add new Franchise</h2>
 <ol>
-  <form method="post" action="">
+  <form method="post" action="/admin">
   	<div class="form-group">
       <label for="hn">New Hotel Name</label>
       <input type="text" name="hn" class="form-control" id="hn">
@@ -41,5 +41,22 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </ol>
+<script>
+	function getAdminReservations(){
+    const Http = new XMLHttpRequest();
+    const url='/getAdminReservations';
+    Http.open("GET", url);
+    Http.send();
 
+    Http.onreadystatechange = (e) => {
+        var text = Http.responseText;
+        console.log(text);
+        console.log(JSON.parse(text));
+        data = JSON.parse(text);
+        //for testing the scaling
+        // data.push([0,0,0,0]);
+        // data.push([100,100,100,100]);
+    }
+}
+</script>
 {% endblock content%}
