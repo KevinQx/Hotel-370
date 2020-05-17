@@ -6,6 +6,12 @@ import json
 app = Flask(__name__)
 app.secret_key = "hello"
 
+
+@app.route("/tiara")
+def tiara():
+    return render_template("Hotel.htm")
+
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if "user" in session:
