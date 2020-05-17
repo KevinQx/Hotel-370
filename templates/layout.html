@@ -16,6 +16,15 @@
         color:white;
       }
 
+      .navbar-nav{
+        display:inline-block;
+      }
+
+      .navbar-nav .nav-item{
+        display:inline-block;
+        margin-right: 20px;
+      }
+
     </style>
     <title>{{title}}</title>
   </head>
@@ -33,24 +42,39 @@
             {% endfor %}
           </div>
         </li>
+        <ul class="navbar-nav ml-md-auto ml-lg-auto ml-sm-auto" style="display:inline-block;margin-right:30px;">   
         {% if session["user"] %}
-        <li class="nav-item">
-          <a class="nav-link"  href="/reservations/a">Your Reservations</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"  href="/logout">Logout</a>
-        </li>
-        <ul class="navbar-nav ml-md-auto">   
-          <li class="nav-item" style="margin-right:30px;">
-            <a class="nav-link"  href="/reservations">{{session["user"]}}</a>
+
+          <li class="nav-item">
+            <a href="/" class="nav-link" href="#">{{ session["date_display"]}}</a>
           </li>
-        </ul>
-          {% else %}
+          <li class="nav-item dropdown" >
+            <a class="nav-link dropdown-toggle" style="" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{session["user"]}}</a>
+          <div class="dropdown-menu dropdown-menu-right" >
+            <a class="dropdown-item" href="/reservations">Reservations</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/logout">Logout {{session["user"]}}</a>
+        </div>
+        </li>
+        {% elif session["admin"] %}    
+          <li class="nav-item">
+            <a href="/" class="nav-link" href="#">{{ session["date_display"]}}</a>
+          </li>
+          <li class="nav-item dropdown" >
+            <a class="nav-link dropdown-toggle" style="" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin: {{session["admin"]}}</a>
+          <div class="dropdown-menu dropdown-menu-right" >
+            <a class="dropdown-item" href="/admin">Admin Panel</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/logout">Logout {{session["user"]}}</a>
+        </div>
+        </li>
+        {% else %}
         <li class="nav-item">
           <a class="nav-link"  href="/login">Login</a>
         </li>
         {% endif %}
-
+          </ul>
+          
       </ul>
     <!-- </nav> -->
     
