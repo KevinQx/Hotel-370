@@ -4,12 +4,14 @@
 <h2>Franchises</h2>
 <h2>Reservations</h2>
 <ul>
-  <li>todays reservations</li>
-  <li>future reservations</li>
+  <li>Todays reservations</li>
+  <p id="current">No Reservations Today</p>
+  <li>Future reservations</li>
+  <p id="future">No Future Reservations</p>
 </ul>
 <h2>Add new Franchise</h2>
 <ol>
-  <form method="post" action="">
+  <form method="post" action="/admin">
   	<div class="form-group">
       <label for="hn">New Hotel Name</label>
       <input type="text" name="hn" class="form-control" id="hn">
@@ -41,5 +43,7 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </ol>
-
+<script>
+   
+</script>
 {% endblock content%}
