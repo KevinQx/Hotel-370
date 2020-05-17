@@ -1,157 +1,205 @@
 {% extends "layout.html" %}
-{% block content%}
-  <style>
-    .card{
-      margin-bottom:20px;
-    }
-  </style>
-<h1>Admin - {{hotel}}</h1>
+{% block content %}
+<style>
+  .card{
+    margin-bottom:20px;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Admin</h1>
+<h2>Franchises</h2>
+<h2>Reservations</h2>
+<ul>
+  <li>Todays reservations</li>
+  <p id="current">No Reservations Today</p>
+  <li>Future reservations</li>
+  <p id="future">No Future Reservations</p>
+
+<div class="card">
+<div class="card-body">
+  <h3>Today's Reservations: {{session["date_display"]}}</h3>
+  This is some text within a card body.
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <br>
+  <br>
+
+  <h3>Future Reservations</h3>
+  This is some text within a card body.
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-body">
+  <h3>Rooms</h3>
+  This is some text within a card body.
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+      <tr>
+        <td colspan="4">   
+          <form class="form-inline">
+            <!-- <div class="form-group mb-2">
+              <label for="staticEmail2" class="sr-only">Price</label>
+              <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Price">
+            </div> -->
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="location" class="sr-only">location</label>
+              <input type="text" class="form-control" id="location" placeholder="Location">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="size" class="sr-only">size</label>
+              <input type="text" class="form-control" id="size" placeholder="Size in sqft">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="price" class="sr-only">price</label>
+              <input type="text" class="form-control" id="price" placeholder="Price">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Add Room</button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+</ul>
 <h2>Add new Franchise</h2>
 <ol>
-  <li>The administrator must specify the location of the new hotel franchise.</li>
-  <li>The administrator must specify number and types of rooms/suites and rates of the new
-    hotel franchise.</li>
+  <form method="post" action="/admin">
+  	<div class="form-group">
+      <label for="hn">New Hotel Name</label>
+      <input type="text" name="hn" class="form-control" id="hn">
+    </div>
+    <div class="form-group">
+      <label for="loci">i Value for New Location</label>
+      <input type="number" name="loci" class="form-control" id="loci">
+    </div>
+    <div class="form-group">
+      <label for="locj">j Value for New Location</label>
+      <input type="number" name="locj" class="form-control" id="locj">
+    </div>
+    <div class="form-group">
+      <label for="cs">Number of Cheap Suites</label>
+      <input type="number" name="cs" class="form-control" id="cs">
+    </div>
+    <div class="form-group">
+      <label for="pc">Price of Cheap Suites</label>
+      <input type="number" name="pc" class="form-control" id="pc">
+    </div>
+    <div class="form-group">
+      <label for="es">Number of Expensive Suites</label>
+      <input type="number" name="es" class="form-control" id="es">
+    </div>
+    <div class="form-group">
+      <label for="pe">Price of Expensive Suites</label>
+      <input type="number" name="pe" class="form-control" id="pe">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </ol>
-<h2>Data Needed</h2>
-<ol>
-  <li>The administrator must specify the location of the new hotel franchise.</li>
-  <li>The administrator must specify number and types of rooms/suites and rates of the new
-    hotel franchise.</li>
-</ol>
-<div class="card">
-  <div class="card-body">
-    <h3>Today's Reservations: {{session["date_display"]}}</h3>
-    This is some text within a card body.
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
-    <hr>
-    <br>
-    <br>
-
-    <h3>Future Reservations</h3>
-    This is some text within a card body.
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-
-<div class="card">
-  <div class="card-body">
-    <h3>Rooms</h3>
-    This is some text within a card body.
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-        <tr>
-          <td colspan="4">   
-            <form class="form-inline">
-              <!-- <div class="form-group mb-2">
-                <label for="staticEmail2" class="sr-only">Price</label>
-                <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Price">
-              </div> -->
-              <div class="form-group mx-sm-3 mb-2">
-                <label for="location" class="sr-only">location</label>
-                <input type="text" class="form-control" id="location" placeholder="Location">
-              </div>
-              <div class="form-group mx-sm-3 mb-2">
-                <label for="size" class="sr-only">size</label>
-                <input type="text" class="form-control" id="size" placeholder="Size in sqft">
-              </div>
-              <div class="form-group mx-sm-3 mb-2">
-                <label for="price" class="sr-only">price</label>
-                <input type="text" class="form-control" id="price" placeholder="Price">
-              </div>
-              <button type="submit" class="btn btn-primary mb-2">Add Room</button>
-            </form>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-
-
+<script>
+   
+</script>
 {% endblock content%}

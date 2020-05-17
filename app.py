@@ -111,7 +111,7 @@ def admin():
             session["date_display"] = date.today().strftime("%D")
             return render_template("admin.html")
         return redirect(url_for("home"))
-
+    return render_template("admin.html")
 
 @app.route("/register_admin", methods=["GET","POST"])
 def register_admin():
@@ -131,7 +131,14 @@ def register_admin():
 def getAllLocations():
     return json.dumps(select_all_locations())
 
+@app.route("/getAdminCurrentReservations")
+def getAdminCurrentReservations(hotel, date):
+    return json.dumps(current_reservations_by_hotel_owner(hotel, date))
 
+@app.route("/getAdminFutureReservations")
+def getAdminFutureReservations(hotel, date):
+    return json.dumps(future_reservations_by_hotel_owner(hotel, date))
+    
 # @app.route("/login")
 # def login_and_register():
 #     return render_template("login.html")
