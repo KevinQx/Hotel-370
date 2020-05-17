@@ -185,3 +185,44 @@ if __name__ == '__main__':
     getData()
     scores()
     update("JSM", 118)
+
+
+#git commands
+
+mkdir
+cd
+cls
+git init //you souldnt need this
+git status
+git add
+git branch // to view branches
+git checkout -b [newbranchname] // create and enter new branch
+
+
+
+
+
+- step1 - download git and install
+
+- step4 - in terminal or command prompt or git bash
+- - go to folder (cd) you want to host the folder within 
+- step5 - "git clone https://github.com/Hotels-Website/Hotel-370.git"
+- step6 - create a new branch for yourself - "git checkout -b your_actual_name"
+- step7 - create a new file in the folder called your_actual_name.txt but write your actual name
+- = "git add your_actual_name.txt" or "git add ." then git commit -m "Initial Commit" 
+- step8 - git push
+- step9 - if your branch doesn't exist on github, you will be prompted to type
+-         git push --set-upstream origin "your_actual_name"
+
+
+
+#the production cycle
+- after you've completed the aboce steps
+- from then on 
+- 1 - git pull origin master - get all the latest changes
+- 2 - make changes to files yourself
+- 3 - see changes you've made - git diff
+- 4 - see files you've modified - git status
+- 5 - add the changes - git add filename or git add .
+- 6 - create a commit for all those changes - git commit -m "description of changes"
+- 7 - git push

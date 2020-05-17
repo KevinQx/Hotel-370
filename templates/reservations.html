@@ -1,11 +1,35 @@
 {% extends "layout.html" %}
 {% block content %}
-<h1>My Reservations</h1>
+<h1>Reservations - <span style="font-size:.7em;color:darkblue">{{session["user"]}}</span></h1>
 <h2>this page should only be visible after a user has logged in</h2>
 <ol>
   <li>user should only see his/her reservations</li>
   <li>booking or canceling should only be done on search engine page or hotel page</li>
 </ol>
-
-
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
 {% endblock %}

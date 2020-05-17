@@ -5,7 +5,9 @@
 <h2>Reservations</h2>
 <ul>
   <li>todays reservations</li>
+  <p id="current"></p>
   <li>future reservations</li>
+  <p id="future"></p>
 </ul>
 <h2>Add new Franchise</h2>
 <ol>
@@ -42,21 +44,6 @@
   </form>
 </ol>
 <script>
-	function getAdminReservations(){
-    const Http = new XMLHttpRequest();
-    const url='/getAdminReservations';
-    Http.open("GET", url);
-    Http.send();
-
-    Http.onreadystatechange = (e) => {
-        var text = Http.responseText;
-        console.log(text);
-        console.log(JSON.parse(text));
-        data = JSON.parse(text);
-        //for testing the scaling
-        // data.push([0,0,0,0]);
-        // data.push([100,100,100,100]);
-    }
-}
+   
 </script>
 {% endblock content%}
