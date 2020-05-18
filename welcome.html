@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Hotel Welcome</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+    
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+    background-color: darkturquoise;
+}
+
+/* Style the header */
+.header {
+  background-color: turquoise;
+  padding: 20px;
+  text-align: center;
+}
+    
+
+    
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+     
+  left: 20%;
+  bottom: 0;
+  right: 0px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+ .big {
+     height: 200px;
+     width: 200px;
+ }
+
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Hotels</h1>
+</div>
+
+<div class="row">
+  <div class="column">
+    <h2>First Franchise</h2>
+      <p>
+    <a href="hoteltest.html">
+<img border="0" alt="W3Schools" src="choice1.jpg" width="300" height="300">
+          </a></p>
+  </div>
+  
+  <div class="column">
+    <h2>Second Franchise</h2>
+        <p>
+    <a href="hoteltest.html">
+<img border="0" alt="W3Schools" src="choice2.jpg" width="300" height="300">
+          </a></p>
+  </div>
+  
+  <div class="column">
+    <h2>Third Franchise</h2>
+        <p>
+    <a href="hoteltest.html">
+<img border="0" alt="W3Schools" src="choice3.jpg" width="300" height="300">
+          </a></p>
+  </div>
+</div>
+
+<h2>Press to Enter The Date</h2>
+    <div class="button big"><button class="open-button" onclick="openForm()">Enter Todays Date</button></div>
+
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+      <center><h2>Please Enter Dates</h2></center>
+
+    <label for="start">Todays Date</label>
+    <input type="date" placeholder="Enter Todays Date" name="start" required>
+        
+    <label for="end">End Date</label>
+    <input type="date" placeholder="Enter End Date" name="end" required>
+   
+
+    <button type="submit" class="btn">Enter</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block" ;
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+</body>
+</html>
